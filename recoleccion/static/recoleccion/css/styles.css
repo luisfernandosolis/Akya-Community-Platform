@@ -1,0 +1,258 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Khand&family=Londrina+Solid&family=Pragati+Narrow&display=swap');
+.navbar{
+    width:100%;
+    background-color:white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.derecha{
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Pragati Narrow', sans-serif;
+
+}
+.derecha >a{
+    width:150px;
+    display: flex;
+    justify-content:center;
+}
+
+.derecha > a:hover{
+    color:white;
+    background-color:#57D964;
+
+
+    border-radius:10px;
+    transition: background-color 1s;
+
+}
+
+.title{
+    margin-top:10px;
+    display: flex;
+    justify-content:center;
+    height:100px;
+    font-size:50px;
+    font-family: 'Londrina Solid', cursive;
+}
+.contenedor_principal{
+    width:90%;padding:0px;
+    margin:0px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-left: 5%;
+    margin-bottom: 100px;
+    margin-top: 10px;
+
+}
+
+/* rankings*/
+.contenedor{
+    margin-bottom:20px;
+
+    width:100%;
+
+    display: flex;
+    flex-direction: row;
+        align-items: flex-end;
+    -webkit-box-shadow: -1px 18px 21px -5px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 18px 21px -5px rgba(0,0,0,0.31);
+    box-shadow: -1px 18px 21px -5px rgba(0,0,0,0.31);
+
+}
+.oro{
+    height: 100%;
+    width: 33.3%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+    .oro .copa{
+        display: flex;
+        justify-content:center;
+        height: 27%;
+        width:100%;
+        margin-top: 10px;
+
+    }
+    .detalles{
+
+        width:100%;
+    }
+
+    .copa img{
+        height:150px;
+    }
+    .oro .detalles{
+        height :90%;
+         background-color:white;
+
+        border-top: 10px solid #ffe268;
+    }
+    .oro .detalles .detalles-tarjeta{
+        margin-bottom: 150px;
+    }
+
+.plata{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+
+    height: 100%;
+    width: 33.3%;
+
+}
+    .plata .detalles{
+        height :80%;
+         background-color:white;
+        border-top: 10px solid #9e9d89;
+        padding-top:25px;
+    }
+    .plata .copa{
+
+        margin-top:80px;
+        display: flex;
+        justify-content:center;
+        align-items: flex-end;
+        height: 27%;
+        width:100%;
+
+
+    }
+.bronce{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height:100%;
+    width: 33.3%;
+
+
+}
+
+    .bronce .detalles{
+        height :60%;
+        background-color:white;
+        border-top: 10px solid #e2703a;
+        text-align:center;
+    }
+    .bronce .copa{
+        margin-top:220px;
+        display: flex;
+        justify-content:center;
+        align-items: flex-end;
+        height: 27%;
+        width:100%;
+    }
+    /* tarjetas de las otras familias */
+.tarjeta{
+    margin-top:10px;
+    margin-bottom:15px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width:100%;
+
+}
+
+/* para el numero de posicion*/
+.posicion{
+    width:20%;
+}
+.tarjeta .posicion{
+    width:100px;
+    height:100px;
+    background-color:#57D964;
+    display: flex;
+    margin:auto;
+    border-radius: 50px;
+}
+.tarjeta .posicion .circulo{
+    margin: auto;
+    color:white;
+    font-size:50px;
+}
+/*tarjetas de detalles*/
+.detalles-familia{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+.perfil-familia img{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+}
+.detalles-familia .detalles-cuerpo{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+}
+
+
+
+
+/* para los detalles de las familias */
+
+.familia{
+    width:80%;
+    background-color:white;
+    display: flex;
+    font-family: 'Pragati Narrow', sans-serif;
+}
+.familia .perfil-familia{
+    width:40%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.familia .perfil-familia img{
+    border-radius:50%;
+    width:100px;
+    height:100px;
+}
+.cuerpo{
+    font-size:1.5em;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    align-items:center;
+}
+
+.footer{
+    height:50px;
+    background-color:black;
+    text-align:center;
+    color:white;
+    font-size:25px;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+
+/* media scream*/
+@media only screen and (max-width: 1190px) {
+  .container {
+    display: flex;
+      flex-direction: column;
+  }
+}

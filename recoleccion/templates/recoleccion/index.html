@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Akya</title>
+
+    <link rel="stylesheet" href="{% static 'recoleccion/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'recoleccion/css/styles.css' %}">
+</head>
+<body style="background-color: #f3f4ed;">
+<div  class="contenedor_principal">
+
+    <!-- barra de navegación-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="#">Akya</a>
+      <div class="derecha">
+         <label class="btn btn-success"> <a style="color:white;" class="navbar-brand" href="{% url 'main' %}">Comunidad</a></label>
+          {% if user.is_authenticated %}
+              <!--<a class="navbar-brand" href="{% url 'dashboard' %}">Registrar</a>-->
+              <a class="navbar-brand" href="{% url 'logout' %}">Cerrar Sesión</a>
+
+            {% else %}
+          <a class="navbar-brand" href="{% url 'login' %}">Iniciar sesión</a>
+          {% endif %}
+      </div>
+  </nav>
+    <section class="title">
+        <spam>RANKING DE LAS FAMILIAS RECICLADORAS</spam>
+    </section>
+
+
+    <!-- podio-->
+
+    <div class="contenedor">
+
+        <div class="plata">
+            <div class="copa">
+                <img src="{% static 'recoleccion/icons/copa-de-plata.png' %}" alt="">
+            </div>
+            <div class="detalles">
+                <div class="detalles-tarjeta">
+                        <div class="detalles-familia">
+                            <div class="perfil-familia">
+                                <img class="card-img-top" src="{% static 'recoleccion/icons/profile.jpg' %}" alt="Card image cap">
+                            </div>
+                              <div class="detalles-cuerpo">
+                                <h2> Los {{ rango.Plata.familia }} </h2>
+                                  <p>{{ rango.Plata.puntos }} puntos</p>
+
+                                  <p class="text-muted" style="font-size:20px;text-align:center;"> Papel {{ rango.Plata.papel }} kg | plastico {{ rango.Plata.plastico }} kg | Botellas: {{ rango.Plata.botella }} kg </p>
+                              </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="oro">
+            <div class="copa">
+                <img src="{% static 'recoleccion/icons/copa-de-oro.png' %}" alt="">
+            </div>
+            <div class="detalles">
+                <div class="detalles-tarjeta">
+                        <div class="detalles-familia">
+                            <div class="perfil-familia">
+                                <img class="card-img-top" src="{% static 'recoleccion/icons/profile.jpg' %}" alt="Card image cap">
+                            </div>
+                              <div class="cuerpo">
+                                <h2>Los {{ rango.Oro.familia }}</h2>
+                                  <p>{{ rango.Oro.puntos }} puntos</p>
+                                    <p class="text-muted" style="font-size:20px;text-align:center;"> Papel {{ rango.Oro.papel }} kg | plastico {{ rango.Oro.plastico }} kg | Botellas: {{ rango.Oro.botella }} kg </p>
+
+                              </div>
+                        </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="bronce">
+            <div class="copa">
+                <img src="{% static 'recoleccion/icons/copa-de-bronce.png' %}" alt="">
+            </div>
+            <div class="detalles">
+                <div class="detalles-tarjeta">
+                        <div class="detalles-familia">
+                            <div class="perfil-familia">
+                                <img class="card-img-top" src="{% static 'recoleccion/icons/profile.jpg' %}" alt="Card image cap">
+                            </div>
+                              <div class="cuerpo">
+                                <h2> Los {{ rango.Bronce.familia }}</h2>
+                                  <p>{{ rango.Bronce.puntos }} puntos</p>
+                                  <p class="text-muted" style="font-size:20px;text-align:center;"> Papel {{ rango.Bronce.papel }} kg | plastico {{ rango.Bronce.plastico }} kg | Botellas: {{ rango.Bronce.botella }} kg </p>
+
+
+
+                              </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+{% for k,recolector in  recolectores.items %}
+    <div class="tarjeta">
+            <div class="posicion">
+                <div class="circulo">
+                    <smap>#{{ recolector.posicion }}</smap>
+                </div>
+            </div>
+            <div class="familia">
+                <div class="perfil-familia">
+                    <img class="card-img-top" src="{% static 'recoleccion/icons/profile.jpg' %}" alt="Card image cap">
+                </div>
+                  <div class="cuerpo">
+                    <h2> Los {{ k }}</h2>
+                      <p>{{ recolector.puntos }} puntos</p>
+                    <p class="text-muted" >Papel {{ recolector.papel }} kg | plastico {{ recolector.plastico }} kg |  botellas {{ recolector.botella }} kg </p>
+
+                  </div>
+            </div>
+    </div>
+{% endfor %}
+
+
+
+
+
+</div>
+<footer class="footer">
+    <spam>Copyright © Akya Community 2021</spam>
+</footer>
+
+</body>
+</html>
